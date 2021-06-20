@@ -5,7 +5,7 @@ import { useTable } from 'react-table'
 const SoloTable = () => {
     
     useEffect(async () => {
-        const res = await fetch('http://localhost:3000/api/solos')
+        const res = await fetch('/api/solos')
         const solos = await res.json()
         setData(solos.data)
     }, [])
