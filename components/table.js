@@ -1,63 +1,57 @@
-import { useTable } from 'react-table'
+import {Table, Thead, Tbody, Tr, Th, Td} from 'react-super-responsive-table'
 
-const Table = (props) => {
+import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
+const Tables = (props) => {
 
     const columns = props.columns
     const data = props.data
-    const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-    } = useTable({ columns, data })
+  console.log(data)
     
   return (
-    <table {...getTableProps()} style={{ border: 'solid 1px blue' }}>
-       <thead>
-         {headerGroups.map(headerGroup => (
-           <tr {...headerGroup.getHeaderGroupProps()}>
-             {headerGroup.headers.map(column => (
-               <th
-                 {...column.getHeaderProps()}
-                 style={{
-                   borderBottom: 'solid 3px red',
-                   background: 'aliceblue',
-                   color: 'black',
-                   fontWeight: 'bold',
-                 }}
-               >
-                 {column.render('Header')}
-               </th>
-             ))}
-           </tr>
-         ))}
-       </thead>
-       <tbody {...getTableBodyProps()}>
-         {rows.map(row => {
-           prepareRow(row)
-           return (
-             <tr {...row.getRowProps()}>
-               {row.cells.map(cell => {
-                 return (
-                   <td
-                     {...cell.getCellProps()}
-                     style={{
-                       padding: '10px',
-                       border: 'solid 1px gray',
-                       background: 'papayawhip',
-                     }}
-                   >
-                     {cell.render('Cell')}
-                   </td>
-                 )
-               })}
-             </tr>
-           )
-         })}
-       </tbody>
-     </table>
+    <>
+    <Table  className="border-black border text-left  " >
+       <Thead className="">
+  
+           <Tr  className="bg-black text-white py-4">
+          {
+            columns.map((e) => {
+              return (
+               <Th className="p-4">
+                 {e.Header}
+               </Th>
+              )
+            })
+          } 
+             
+           </Tr>
+  
+       </Thead>
+       <Tbody className="border border-black h-80 overflow-y-scroll ">
+      
+          {data.map((e) => { 
+            return (
+            <Tr  className="border border-black">
+              {Object.values(e).map(e => {
+                return (
+            <Td className="border border-black p-4" style={{"backgroundColor":"#FFC8D1"}}>
+              {e}
+            </Td>
+                )
+              })
+            }
+
+ 
+      </Tr>
+            )
+          })}
+             
+          
+  
+       </Tbody>
+     </Table>
+    
+     </>
   )
 }
 
-export default Table;
+export default Tables;

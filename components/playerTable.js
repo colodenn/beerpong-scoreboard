@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import React from 'react';
 
 
-import Table from './table'
+import Tables from './table'
 const PlayerTable = () => {
     const [data,setData] = useState([])
 
@@ -69,7 +69,7 @@ const PlayerTable = () => {
      
   return (
     <div id="main">
-    <Table columns={columns} data={data} />
+    <Tables columns={columns} data={data} />
     <button className="rounded bg-blue-400 text-white font-bold px-4 py-2" onClick={openModal}>Add Player</button>
 
     <Modal
