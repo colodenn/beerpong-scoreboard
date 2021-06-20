@@ -1,7 +1,7 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import SoloTable from '../components/solotable';
 import PlayerTable from '../components/playerTable';
-
+import Create from '../components/game/create'
 
 export default function Home() {
   
@@ -14,6 +14,8 @@ export default function Home() {
             <Tab className="text-white font-bold text-2xl mr-4 cursor-pointer">Solo</Tab>
             <Tab className="text-white font-bold text-2xl mr-4 cursor-pointer">Team</Tab>
             <Tab className="text-white font-bold text-2xl mr-4 cursor-pointer">Players</Tab>
+            <Tab className="text-white font-bold text-2xl mr-4 cursor-pointer">Create Game</Tab>
+
           </TabList>
           <TabPanel>
               <SoloTable/>
@@ -23,6 +25,9 @@ export default function Home() {
           </TabPanel>
           <TabPanel className="flex justify-center">
             <PlayerTable/>
+          </TabPanel>
+          <TabPanel className="flex justify-center">
+            <Create/>
           </TabPanel>
         </Tabs>
       </div>
