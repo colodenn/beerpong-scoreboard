@@ -14,7 +14,6 @@ export default async function solos(req, res) {
       query.data.forEach(e => {
         arr.push(e.data)
       });
-      console.log(arr)
       res.status(200).json({ data: arr });
     }
     

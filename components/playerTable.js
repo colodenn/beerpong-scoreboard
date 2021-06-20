@@ -10,7 +10,6 @@ const PlayerTable = () => {
     useEffect(async () => {
         const res = await fetch('/api/players')
         const players = await res.json()
-        console.log(players.data)
         setData(players.data)
     }, []) 
 
@@ -49,7 +48,7 @@ const PlayerTable = () => {
       body: JSON.stringify(inputV)})
       .then((res) => res.json()).then(re => {
         closeModal();
-        setData(data.concat(re.data));
+        setData(data.concat(re.data.data));
       })
       
     }
