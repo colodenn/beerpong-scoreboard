@@ -10,6 +10,10 @@ export default async function solos(req, res) {
             q.Lambda((player) => q.Get(player))
           )
         );
-        res.status(200).json({ data: query.data });
+        var arr = []
+        query.data.forEach(e => {
+          arr.push(e.data)
+        });
+        res.status(200).json({ data: arr });
       }
   }
