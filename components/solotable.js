@@ -15,7 +15,6 @@ const SoloTable = () => {
         setData(solos.data)
         const res2 = await fetch('/api/players')
         const players = await res2.json()
-        console.log(players.data)
         setPlayers(players.data)
     }, [])
 
