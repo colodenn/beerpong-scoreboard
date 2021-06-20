@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useTable } from 'react-table'
 import useSWR from 'swr'
-import Table from './table'
+import Tables from './table'
 import Modal from 'react-modal';
 import React from 'react';
 
@@ -39,9 +39,8 @@ const SoloTable = () => {
             Header: 'Datum',
             accessor: 'timestamp', // accessor is the "key" in the data
           },
-          {
-            Header: 'Spieltyp',
-            columns: [
+          
+           
                 {
                     Header: 'Art',
                     accessor: 'art', // accessor is the "key" in the data
@@ -50,8 +49,8 @@ const SoloTable = () => {
                     Header: 'Becher count',
                     accessor: 'count', // accessor is the "key" in the data
                   },
-            ]
-          },
+            
+          
           {
               Header: 'Spieler 1',
               accessor: 'player1'
@@ -60,9 +59,7 @@ const SoloTable = () => {
             Header: 'Spieler 2',
             accessor: 'player2'
         },
-         {
-            Header: 'Ergebnis',
-            columns: [
+        
                 {
                     Header: 'Schnickelgewinner',
                     accessor: 'schnickelgewinner'
@@ -75,8 +72,8 @@ const SoloTable = () => {
                     Header: 'Gewinner',
                     accessor: 'winner'
                 },
-            ]
-        },
+            
+        
         ],
         []
       )
@@ -118,9 +115,9 @@ const SoloTable = () => {
     
   return (
     <>
-    <Table columns={columns} data={data}/>
+    <Tables columns={columns} data={data}/>
     <div className="flex mt-4">
-    <button onClick={openModal} className="rounded justify-center mx-auto rounded bg-blue-400 text-white font-bold px-4 py-2">Add Solo</button>
+    <button onClick={openModal} className=" justify-center mx-auto bg-black text-white font-normal hover:bg-gray-700 px-4 py-2">Add Solo</button>
 
     </div>
 
@@ -217,8 +214,8 @@ const SoloTable = () => {
             </div>
           </div>
           <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <button type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              Save
+            <button type="submit" className="inline-flex justify-center py-2 px-4 text-sm font-medium rounded-md text-white bg-black hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              Add
             </button>
           </div>
         </div>
