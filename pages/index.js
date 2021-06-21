@@ -29,9 +29,9 @@ export default function Home() {
             <h1 className="w-full border-black border-b-2 py-2 mt-8 text-2xl font-bold">Games Played</h1>
 
               <div className=" mt-4  p-1 border border-dashed border-black border-8 ">
-                <div className=" p-16" style={{"backgroundColor": "#FFA3B3"}}>
+                <div className=" sm:p-16 p-4" style={{"backgroundColor": "#FFA3B3"}}>
 
-    <div className="w-1/2  mx-auto">
+    <div className="sm:w-1/2  mx-auto">
       <Piechart />
     </div>
 
