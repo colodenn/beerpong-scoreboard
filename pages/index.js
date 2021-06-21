@@ -10,7 +10,7 @@ export default function Home() {
 <>
     <div style={{"backgroundColor": "#FFA3B3"}}>
 
-      <div className="sm:p-10 p-4">
+      <div className="sm:p-10 container justify-center mx-auto p-4  min-h-screen">
       <Tabs >
         <h1 className="text-black font-semibold text-3xl mb-8 sm:text-left text-center ">🍻 Beerpong gedöns und so</h1>
           <TabList className="flex  justify-center sm:justify-start mb-4">
@@ -23,7 +23,7 @@ export default function Home() {
 
           </TabList>
           <TabPanel   className="mx-auto justify-center">
-          <h1 className="w-full border-black border-b-2 py-2 mb-4 text-2xl font-bold">Tabelle</h1>
+          <h1 className="w-full border-black border-b-2 py-2 mb-4 text-2xl font-bold">Recent Games</h1>
 
               <SoloTable/>
             <h1 className="w-full border-black border-b-2 py-2 mt-8 text-2xl font-bold">Games Played</h1>
