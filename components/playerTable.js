@@ -70,7 +70,7 @@ const PlayerTable = () => {
   return (
     <div id="main">
     <Tables columns={columns} data={data} />
-    <button className="rounded bg-blue-400 text-white font-bold px-4 py-2" onClick={openModal}>Add Player</button>
+    <button className="flex  mx-auto bg-black text-white font-semibold px-4 py-2 mt-4 hover:bg-gray-700 " onClick={openModal}>Add Player</button>
 
     <Modal
         isOpen={modalIsOpen}
