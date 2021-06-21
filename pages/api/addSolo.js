@@ -1,6 +1,7 @@
 import { query as q } from 'faunadb';
 import { faunaClient } from '../../lib/fauna';
 
+process.env.TZ = 'Europe/Amsterdam';
 
 export default async function addPlayer(req, res) {
     if (req.method == 'POST') {
@@ -16,7 +17,7 @@ export default async function addPlayer(req, res) {
                     count: req.body.count,
                     schnickelgewinner: req.body.schnickelgewinner,
                     leftcount: req.body.leftcount,
-                    timestamp: (new Date()).toString().slice(0,-30),
+                    timestamp: (new Date()).toString().slice(0,-39),
                     winner: req.body.winner
                  }
              }

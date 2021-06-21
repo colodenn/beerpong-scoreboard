@@ -5,7 +5,7 @@ import Create from '../components/game/create'
 import Piechart from '../components/piechart';
 import Rules from '../components/rules/rules';
 export default function Home() {
-  
+
   return (
 <>
     <div style={{"backgroundColor": "#FFA3B3"}}>
