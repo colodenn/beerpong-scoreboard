@@ -22,8 +22,11 @@ export default function Home() {
 
           </TabList>
           <TabPanel   className="mx-auto justify-center">
+            <h1 className="w-full border-black border-b-2 mb-4 text-2xl font-semibold">Tabelle</h1>
               <SoloTable/>
-              <div className=" mt-16   border border-dashed border-black border-8 ">
+            <h1 className="w-full border-black border-b-2 mt-8 text-2xl font-semibold">Charts</h1>
+
+              <div className=" mt-4   border border-dashed border-black border-8 ">
                 <div className=" grid grid-cols-2 bg-black">
 
     <div className="w-1/3  mx-auto">
