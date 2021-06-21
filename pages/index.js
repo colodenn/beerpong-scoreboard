@@ -3,8 +3,10 @@ import SoloTable from '../components/solotable';
 import PlayerTable from '../components/playerTable';
 import Create from '../components/game/create'
 import Piechart from '../components/piechart';
+import Rules from '../components/rules/rules';
+
 export default function Home() {
-  
+
   return (
 <>
     <div style={{"backgroundColor": "#FFA3B3"}}>
@@ -51,7 +53,7 @@ export default function Home() {
             <Create/>
           </TabPanel>
           <TabPanel>
-            <h1>Regeln!</h1>
+            <Rules/>
           </TabPanel>
         </Tabs>
       </div>
