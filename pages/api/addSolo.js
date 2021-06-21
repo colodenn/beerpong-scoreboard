@@ -1,7 +1,7 @@
 import { query as q } from 'faunadb';
 import { faunaClient } from '../../lib/fauna';
 
-process.env.TZ = 'Europe/Frankfurt';
+process.env.TZ = 'Europe/Amsterdam';
 
 export default async function addPlayer(req, res) {
     if (req.method == 'POST') {
