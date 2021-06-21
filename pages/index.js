@@ -23,15 +23,20 @@ export default function Home() {
           </TabList>
           <TabPanel   className="mx-auto justify-center">
               <SoloTable/>
+<<<<<<< Updated upstream
               <div className=" mt-16   border border-dashed border-black border-8 ">
                 <div className=" grid grid-cols-2 bg-black">
+=======
+            <h1 className="w-full border-black border-b-2 mt-8 text-2xl font-semibold">Charts</h1>
 
-    <div className="w-1/3  mx-auto">
+              <div className=" mt-4  p-1 border border-dashed border-black border-8 ">
+                <div className=" p-16" style={{"backgroundColor": "#FFA3B3"}}>
+>>>>>>> Stashed changes
+
+    <div className="  mx-auto">
       <Piechart />
     </div>
-    <div className="w-1/3  mx-auto">
-      <Piechart />
-    </div>
+
     
 
                 </div>
@@ -48,7 +53,13 @@ export default function Home() {
             <Create/>
           </TabPanel>
           <TabPanel>
+<<<<<<< Updated upstream
             <h1>Regeln!</h1>
+=======
+          <h1 className="w-full border-black border-b-2 mb-4 text-2xl font-semibold">Regeln</h1>
+
+            <Rules/>
+>>>>>>> Stashed changes
           </TabPanel>
         </Tabs>
       </div>
