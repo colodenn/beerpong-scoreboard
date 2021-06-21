@@ -2,7 +2,7 @@ import React from 'react';
 import { Pie } from 'react-chartjs-2';
 
 const data = {
-  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+  labels: ['Corno', 'Jonas', 'Yannick', 'Tobias', 'Margarete', 'Noah'],
   datasets: [
     {
       label: '# of Votes',
@@ -30,7 +30,6 @@ const data = {
 
 const Piechart = () => (
   <>
-  
     <Pie data={data} height={50} width={50}/>
   </>
 );

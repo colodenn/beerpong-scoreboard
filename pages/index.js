@@ -4,7 +4,6 @@ import PlayerTable from '../components/playerTable';
 import Create from '../components/game/create'
 import Piechart from '../components/piechart';
 import Rules from '../components/rules/rules';
-
 export default function Home() {
 
   return (
@@ -24,19 +23,18 @@ export default function Home() {
 
           </TabList>
           <TabPanel   className="mx-auto justify-center">
-            <h1 className="w-full border-black border-b-2 mb-4 text-2xl font-semibold">Tabelle</h1>
+          <h1 className="w-full border-black border-b-2 py-2 mb-4 text-2xl font-bold">Tabelle</h1>
+
               <SoloTable/>
-            <h1 className="w-full border-black border-b-2 mt-8 text-2xl font-semibold">Charts</h1>
+            <h1 className="w-full border-black border-b-2 py-2 mt-8 text-2xl font-bold">Games Played</h1>
 
-              <div className=" mt-4   border border-dashed border-black border-8 ">
-                <div className=" grid grid-cols-2 bg-black">
+              <div className=" mt-4  p-1 border border-dashed border-black border-8 ">
+                <div className=" sm:p-16 p-4" style={{"backgroundColor": "#FFA3B3"}}>
 
-    <div className="w-1/3  mx-auto">
+    <div className="sm:w-1/2  mx-auto">
       <Piechart />
     </div>
-    <div className="w-1/3  mx-auto">
-      <Piechart />
-    </div>
+
     
 
                 </div>
@@ -53,6 +51,8 @@ export default function Home() {
             <Create/>
           </TabPanel>
           <TabPanel>
+          <h1 className="w-full border-black border-b-2 mb-4 text-2xl font-semibold">Regeln</h1>
+
             <Rules/>
           </TabPanel>
         </Tabs>
