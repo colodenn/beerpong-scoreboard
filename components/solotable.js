@@ -12,7 +12,7 @@ const SoloTable = () => {
     useEffect(async () => {
         const res = await fetch('/api/solos')
         const solos = await res.json()
-        setData(solos.data)
+        setData(solos.data.slice(-4))
         const res2 = await fetch('/api/players')
         const players = await res2.json()
         setPlayers(players.data)
@@ -214,7 +214,7 @@ const SoloTable = () => {
             </div>
           </div>
           <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <button type="submit" className="inline-flex justify-center py-2 px-4 text-sm font-medium rounded-md text-white bg-black hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <button type="submit" className="inline-flex justify-center py-2 px-4 text-sm font-medium  text-white bg-black hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
               Add
             </button>
           </div>

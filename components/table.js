@@ -5,11 +5,14 @@ const Tables = (props) => {
 
     const columns = props.columns
     const data = props.data
-  console.log(data)
+    var arr = []
+    columns.forEach(element => {
+        arr.push(Object.values(element)[1])
+    });
     
   return (
     <>
-    <Table  className="border-black border text-left  " >
+    <Table  style={{"backgroundColor": "#FFA3B3"}} className="border-black border text-left  " >
        <Thead className="">
   
            <Tr  className="bg-black text-white py-4">
@@ -29,16 +32,23 @@ const Tables = (props) => {
        <Tbody className="border border-black h-80 overflow-y-scroll ">
       
           {data.map((e) => { 
+            {console.log(e)}
             return (
             <Tr  className="border border-black">
-              {Object.values(e).map(e => {
-                return (
-            <Td className="border border-black p-4" style={{"backgroundColor":"#FFC8D1"}}>
-              {e}
+             
+        
+  {
+    arr.map(t => {
+        return (
+          <Td className="border border-black p-4 sm:p-2" style={{"backgroundColor":"#FFC8D1"}}>
+              {e[t]}
             </Td>
-                )
-              })
-            }
+        )
+    })
+  }
+
+            
+            
 
  
       </Tr>

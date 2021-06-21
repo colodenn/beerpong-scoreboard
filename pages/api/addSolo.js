@@ -16,7 +16,7 @@ export default async function addPlayer(req, res) {
                     count: req.body.count,
                     schnickelgewinner: req.body.schnickelgewinner,
                     leftcount: req.body.leftcount,
-                    timestamp: (new Date()).toString(),
+                    timestamp: (new Date()).toString().slice(0,-30),
                     winner: req.body.winner
                  }
              }
