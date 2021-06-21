@@ -23,7 +23,7 @@ export default function Home() {
 
           </TabList>
           <TabPanel   className="mx-auto justify-center">
-          <h1 className="w-full border-black border-b-2 py-2 mb-4 text-2xl font-bold">Tabelle</h1>
+          <h1 className="w-full border-black border-b-2 py-2 mb-4 text-2xl font-bold">Recent Games</h1>
 
               <SoloTable/>
             <h1 className="w-full border-black border-b-2 py-2 mt-8 text-2xl font-bold">Games Played</h1>

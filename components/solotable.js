@@ -12,7 +12,7 @@ const SoloTable = () => {
     useEffect(async () => {
         const res = await fetch('/api/solos')
         const solos = await res.json()
-        setData(solos.data.slice(-4))
+        setData(solos.data.slice(-8).reverse())
         const res2 = await fetch('/api/players')
         const players = await res2.json()
         setPlayers(players.data)
