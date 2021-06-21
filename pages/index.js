@@ -10,7 +10,7 @@ export default function Home() {
 <>
     <div style={{"backgroundColor": "#FFA3B3"}}>
 
-      <div className="sm:p-10 p-4">
+      <div className="sm:p-10 container justify-center mx-auto p-4  min-h-screen">
       <Tabs >
         <h1 className="text-black font-semibold text-3xl mb-8 sm:text-left text-center ">🍻 Beerpong gedöns und so</h1>
           <TabList className="flex  justify-center sm:justify-start mb-4">
