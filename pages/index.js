@@ -5,6 +5,7 @@ import Create from '../components/game/create'
 import Piechart from '../components/piechart';
 import Rules from '../components/rules/rules';
 export default function Home() {
+ 
 
   return (
 <>
@@ -32,7 +33,7 @@ export default function Home() {
                 <div className=" sm:p-16 p-4" style={{"backgroundColor": "#FFA3B3"}}>
 
     <div className="sm:w-1/2  mx-auto">
-      <Piechart />
+      <Piechart  />
     </div>
 
     
