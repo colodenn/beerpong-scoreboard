@@ -4,10 +4,13 @@ import useSWR from 'swr'
 import Tables from './table'
 import Modal from 'react-modal';
 import React from 'react';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
 const SoloTable = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [players,setPlayers] = useState([])
+  const [startDate, setStartDate] = useState(new Date());
   
     useEffect(async () => {
         const res = await fetch('/api/solos')
@@ -16,6 +19,7 @@ const SoloTable = () => {
         const res2 = await fetch('/api/players')
         const players = await res2.json()
         setPlayers(players.data)
+        
     }, [])
 
     const customStyles = {
@@ -103,7 +107,8 @@ const SoloTable = () => {
          count: event.target.count.value,
          schnickelgewinner: event.target.schnickelgewinner.value,
          leftcount: event.target.leftcount.value,
-         winner: event.target.winner.value
+         winner: event.target.winner.value,
+         timestamp: startDate
 
         })
         })
@@ -199,18 +204,35 @@ const SoloTable = () => {
               <div className="col-span-6 sm:col-span-3">
                 <label for="country" className="block text-sm font-medium text-gray-700">Übrige Becher</label>
                 <select id="leftcount" name="leftcount" autocomplete="country" className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <option>0</option>
+              
                 <option>1</option>
                   <option>2</option>
                   <option>3</option>
                   <option>4</option>
                   <option>5</option>
                   <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+
 
 
                 </select>
               </div>
+              <div className="col-span-6 sm:col-span-3">
+              <label for="date" className="block text-sm font-medium text-gray-700">Datum</label>
 
-     
+              <DatePicker className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      selected={startDate}
+      onChange={(date) => setStartDate(date)}
+      timeInputLabel="Time:"
+      dateFormat="MM/dd/yyyy h:mm aa"
+      showTimeInput
+      id="date" name="date"
+    />
+    </div>
             </div>
           </div>
           <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
