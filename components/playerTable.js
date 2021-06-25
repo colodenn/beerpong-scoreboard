@@ -49,6 +49,7 @@ const PlayerTable = () => {
       .then((res) => res.json()).then(re => {
         closeModal();
         setData(data.concat(re.data.data));
+        console.log(re.data.data)
       })
       
     }

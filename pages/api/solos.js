@@ -1,21 +1,23 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { query as q } from 'faunadb';
-import { faunaClient } from '../../lib/fauna';
+
+import prisma from '../../lib/prisma';
 
 export default async function solos(req, res) {
     if (req.method == 'GET') {
-      let query = await faunaClient.query(
-        q.Map(
-          q.Paginate(q.Documents(q.Collection('solos'))),
-          q.Lambda((solos) => q.Get(solos))
-        )
-      );
-      var arr = []
-      query.data.forEach(e => {
-        arr.push(e.data)
-      });
-      res.status(200).json({ data: arr });
+      console.log(prisma.solo)
+      // let query = await faunaClient.query(
+      //   q.Map(
+      //     q.Paginate(q.Documents(q.Collection('solos'))),
+      //     q.Lambda((solos) => q.Get(solos))
+      //   )
+      // );
+      // var arr = []
+      // query.data.forEach(e => {
+      //   arr.push(e.data)
+      // });
+      res.status(200).json({ data: "arr" });
     }
     
+
+
   }
   

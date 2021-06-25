@@ -1,20 +1,16 @@
-import { query as q } from 'faunadb';
-import { faunaClient } from '../../lib/fauna';
+import prisma from "../../lib/prisma";
 
 
 export default async function addPlayer(req, res) {
     if (req.method == 'POST') {
-        let query = await faunaClient.query(
-            q.Create(
-             q.Collection('player'),
-             {
-                 data: {
-                     name: req.body
-                 }
-             }
-            )
-          );
-
-        res.status(200).json({ data: query });
+        let query = await prisma.user.create({
+            data: {
+                name: req.body
+            },
+            select: {
+                name: true
+            }
+        })
+        res.status(200).json({ data: {data: query} });
       }
   }
