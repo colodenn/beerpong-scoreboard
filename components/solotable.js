@@ -15,6 +15,7 @@ const SoloTable = () => {
     useEffect(async () => {
         const res = await fetch('/api/solos')
         const solos = await res.json()
+        console.log(solos)
         setData(solos.data.slice(-8).reverse())
         const res2 = await fetch('/api/players')
         const players = await res2.json()
@@ -41,13 +42,13 @@ const SoloTable = () => {
         () => [
           {
             Header: 'Datum',
-            accessor: 'timestamp', // accessor is the "key" in the data
+            accessor: 'date', // accessor is the "key" in the data
           },
           
            
                 {
                     Header: 'Art',
-                    accessor: 'art', // accessor is the "key" in the data
+                    accessor: 'typeName', // accessor is the "key" in the data
                   },
                   {
                     Header: 'Becher count',
@@ -57,24 +58,24 @@ const SoloTable = () => {
           
           {
               Header: 'Spieler 1',
-              accessor: 'player1'
+              accessor: 'Player1'
           },
           {
             Header: 'Spieler 2',
-            accessor: 'player2'
+            accessor: 'Player2'
         },
         
                 {
                     Header: 'Schnickelgewinner',
-                    accessor: 'schnickelgewinner'
+                    accessor: 'Schnickelgewinner'
                 },
                 {
                     Header: 'Übrige Becher',
-                    accessor: 'leftcount'
+                    accessor: 'leftover'
                 },
                 {
                     Header: 'Gewinner',
-                    accessor: 'winner'
+                    accessor: 'Winner'
                 },
             
         

@@ -25,16 +25,15 @@ model Solo {
   Schnickelgewinner String?
   leftover          Int
   Winner            String?
-  typeId            Int?
+  typeName          String?
   User              User?    @relation("Player1", fields: [Player1], references: [name])
   User2             User?    @relation("Player2", fields: [Player2], references: [name])
   User3             User?    @relation("Schnickelgewinner", fields: [Schnickelgewinner], references: [name])
   User4             User?    @relation("Winner", fields: [Winner], references: [name])
-  Type              Type?    @relation(fields: [typeId], references: [id])
+  Type              Type?    @relation("typeName", fields: [typeName], references: [name])
 }
 
 model Type {
-  id   Int    @id @default(autoincrement())
-  name String @unique
-  solo Solo[]
+  name String @id
+  Solo Solo[] @relation("typeName")
 }
