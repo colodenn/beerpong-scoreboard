@@ -19,7 +19,7 @@ export default function Home() {
             <Tab className="text-white font-normal sm:text-2xl text-base mr-4 cursor-pointer">Team</Tab>
             <Tab className="text-white font-normal sm:text-2xl text-base mr-4 cursor-pointer">Players</Tab>
             <Tab className="text-white font-normal sm:text-2xl text-base mr-4 cursor-pointer">Create Game</Tab>
-            <Tab className="text-white font-normal sm:text-2xl text-base mr-4 cursor-pointer">Regeln</Tab>
+            <Tab className="text-white font-normal sm:text-2xl text-base mr-4 cursor-pointer">Rules</Tab>
 
 
           </TabList>
